@@ -1,0 +1,20 @@
+{
+  "name": "Test abz",
+  "short_name": "Test abz",
+  "icons": [
+    {
+      "src": "./img/icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icons/favicon.svg",
+      "sizes": "32x32",
+      "type": "image/svg"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4DBA87"
+}

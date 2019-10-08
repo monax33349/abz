@@ -1,0 +1,21 @@
+// Fade
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.75s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// Slide
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.75s ease;
+}
+
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(-100%);
+}

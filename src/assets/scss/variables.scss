@@ -1,0 +1,136 @@
+// Font Family
+@font-face {
+    font-family: 'Overpass';
+    src: url('~@/assets/fonts/Overpass-SemiBold.ttf') format('ttf'),
+        url('~@/assets/fonts/Overpass-SemiBold.eot') format('eot'),
+        url('~@/assets/fonts/Overpass-SemiBold.svg') format('svg'),
+        url('~@/assets/fonts/Overpass-SemiBold.woff') format('woff'),
+        url('~@/assets/fonts/Overpass-SemiBold.woff2') format('woff2');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('~@/assets/fonts/SourceSansPro-Regular.ttf') format('ttf'),
+        url('~@/assets/fonts/SourceSansPro-Regular.eot') format('eot'),
+        url('~@/assets/fonts/SourceSansPro-Regular.svg') format('svg'),
+        url('~@/assets/fonts/SourceSansPro-Regular.woff') format('woff'),
+        url('~@/assets/fonts/SourceSansPro-Regular.woff2') format('woff2');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('~@/assets/fonts/SourceSansPro-Bold.ttf') format('ttf'),
+        url('~@/assets/fonts/SourceSansPro-Bold.eot') format('eot'),
+        url('~@/assets/fonts/SourceSansPro-Bold.svg') format('svg'),
+        url('~@/assets/fonts/SourceSansPro-Bold.woff') format('woff'),
+        url('~@/assets/fonts/SourceSansPro-Bold.woff2') format('woff2');
+    font-weight: bold;
+}
+
+// Mixin
+
+@mixin fontOverpass {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 700;
+}
+
+@mixin fontSource {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+
+@mixin fontSourceBold {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+
+@mixin maxW {
+    max-width: 1170px;
+    display: flex;
+}
+
+// Typography
+
+@mixin h1 {
+    font-family: 'Overpass';
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 60px;
+}
+
+@mixin h2 {
+    font-family: 'Overpass';
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1.2;
+
+}
+
+@mixin h3 {
+    font-family: 'Overpass';
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+}
+
+@mixin h4 {
+    font-family: 'Overpass';
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+@mixin h5 {
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+// Paragraph
+
+@mixin p1 {
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+@mixin p2 {
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+@mixin p3 {
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+@mixin cropText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+//   Variables
+
+$primariColor: #ef6c00;
+$secondaryColor: #283593;
+$bgColor: #fff;
+$link: #000;
+$linkActive:#283593;
+$linkHover:#ef6c00;
+$linkDisable: #8d8c8c;
+$buttonDisabled: #b7b7b7;
+$error: #f44336;
+$buttonHover: #fc831f;
+
+$padding2k: 0 15px;
+$spacers: 16px;
