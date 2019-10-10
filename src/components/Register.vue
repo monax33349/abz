@@ -1,14 +1,14 @@
 <template>
   <b-container id="singup">
     <h2>Register to get a work</h2>
-    <h5>Attention! After successful registration and alert, <br class="d-lg-none" > update the list of users in the block from the top</h5>
+    <h5>
+      Attention! After successful registration and alert,
+      <br class="d-lg-none" />update the list of users in the block from the top
+    </h5>
     <b-form v-on:submit.prevent="onSubmits">
       <b-row class="row-form">
         <b-col cols="12" md="4" class="input-wrap">
-          <label 
-            for="name"
-            :class="{error:errors.has('name')}"
-            >Name</label>
+          <label for="name" :class="{error:errors.has('name')}">Name</label>
           <b-form-input
             v-model="name"
             type="text"
@@ -20,14 +20,11 @@
             :state="errors.has('name') ? false : null"
             placeholder="Name"
           />
-            <b-form-invalid-feedback :state="errors.has('name')">{{errors.first('name')}}</b-form-invalid-feedback>
+          <b-form-invalid-feedback :state="errors.has('name')">{{errors.first('name')}}</b-form-invalid-feedback>
         </b-col>
 
         <b-col cols="12" md="4" class="input-wrap">
-          <label 
-            for="email"
-            :class="{error:errors.has('email')}"
-          >Email</label>
+          <label for="email" :class="{error:errors.has('email')}">Email</label>
           <b-form-input
             v-model="email"
             type="email"
@@ -39,14 +36,11 @@
             :state="errors.has('email') ? false : null"
             placeholder="Email"
           />
-            <b-form-invalid-feedback :state="errors.has('email')">{{errors.first('email')}}</b-form-invalid-feedback>
+          <b-form-invalid-feedback :state="errors.has('email')">{{errors.first('email')}}</b-form-invalid-feedback>
         </b-col>
 
         <b-col cols="12" md="4" class="input-wrap">
-          <label 
-            for="phone"
-            :class="{error:errors.has('phone')}"
-          >Phone</label>
+          <label for="phone" :class="{error:errors.has('phone')}">Phone</label>
           <b-form-input
             v-model="phone"
             id="phone"
@@ -58,7 +52,7 @@
             :state="errors.has('phone') ? false : null"
             placeholder="+38 (___)  ___ __ __"
           />
-            <b-form-invalid-feedback :state="errors.has('phone')">{{errors.first('phone')}}</b-form-invalid-feedback>
+          <b-form-invalid-feedback :state="errors.has('phone')">{{errors.first('phone')}}</b-form-invalid-feedback>
         </b-col>
       </b-row>
 
@@ -70,8 +64,9 @@
             data-vv-as="selected"
             :state="errors.has('Position') ? false : null"
             :class="{error:errors.has('Position')}"
-            class="custom-select-arrow" 
-            v-model="selectedPosition">
+            class="custom-select-arrow"
+            v-model="selectedPosition"
+          >
             <template v-slot:first>
               <option :value="null" disabled>Select your position</option>
             </template>
@@ -102,7 +97,7 @@
           <p id="input-feedback-custom">File format jpg up to 5 MB, the minimum size of 70x70px</p>
         </b-col>
       </b-row>
-      <button class="custom-btn" type="submit" :disabled="!isFormValid">Sign up</button> 
+      <button class="custom-btn" type="submit" :disabled="!isFormValid">Sign up</button>
     </b-form>
   </b-container>
 </template>
@@ -113,7 +108,7 @@ import eventBus from "@/eventBus";
 
 export default {
   $_veeValidate: {
-    events: ''
+    events: ""
   },
 
   data() {
@@ -144,7 +139,7 @@ export default {
     },
 
     onSubmits() {
-      this.$validator.validateAll().then((result) => {
+      this.$validator.validateAll().then(result => {
         if (result) {
           ApiLanding.getToken().then(resp => {
             const form = {
@@ -163,21 +158,24 @@ export default {
             ApiLanding.registerUser(formData, resp.data.token)
               .then(() => {
                 eventBus.$emit("registration:newUser");
-                this.$bvModal.msgBoxOk("You have successfully passed the registration", {
-                  title: 'Congratulations',
-                  size: 'sm',
-                  buttonSize: 'sm',
-                  okVariant: 'success',
-                  headerClass: 'p-4 border-bottom-0',
-                  footerClass: 'p-4 border-top-0 custom-modal-btn',
-                  centered: true
-                });
+                this.$bvModal.msgBoxOk(
+                  "You have successfully passed the registration",
+                  {
+                    title: "Congratulations",
+                    size: "sm",
+                    buttonSize: "sm",
+                    okVariant: "success",
+                    headerClass: "p-4 border-bottom-0",
+                    footerClass: "p-4 border-top-0 custom-modal-btn",
+                    centered: true
+                  }
+                );
 
-                  this.name = "",
-                  this.email = "",
-                  this.phone = "",
-                  this.selectedPosition = null,
-                  this.selectedFile= null
+                (this.name = ""),
+                  (this.email = ""),
+                  (this.phone = ""),
+                  (this.selectedPosition = null),
+                  (this.selectedFile = null);
               })
               .catch(error => console.log(error));
           });
@@ -201,7 +199,7 @@ export default {
   h2 {
     @include h2;
     margin-bottom: 13px;
-    color: #000; 
+    color: #000;
   }
 
   h5 {
@@ -209,7 +207,6 @@ export default {
     margin-bottom: 63px;
     color: #000;
   }
-
 }
 
 //  Form
@@ -238,7 +235,6 @@ form {
       box-shadow: none;
       border-width: 2px;
     }
-
   }
 
   label {
@@ -275,29 +271,27 @@ form {
 //  Input file style
 
 .custom-btn {
-    @include fontSourceBold;
-    display: block;
-    width: 290px;
-    height: 40px;
-    border: none;
-    font-size: 20px;
-    margin: 34px auto 0;
-    border-radius: 4px;
-    background-color: #ef6c00;
-    color: #fff;
-    cursor: pointer;
-    
-    &:hover {
-      background-color: $buttonHover;
-    }
-    
-    &:disabled {
-      background-color: #d7d7d7;
-      color: $linkDisable;
-    }
+  @include fontSourceBold;
+  display: block;
+  width: 290px;
+  height: 40px;
+  border: none;
+  font-size: 20px;
+  margin: 34px auto 0;
+  border-radius: 4px;
+  background-color: #ef6c00;
+  color: #fff;
+  cursor: pointer;
 
+  &:hover {
+    background-color: $buttonHover;
+  }
+
+  &:disabled {
+    background-color: #d7d7d7;
+    color: $linkDisable;
+  }
 }
-
 
 p#input-feedback-custom {
   padding-left: 10px;
@@ -314,7 +308,6 @@ input.error {
   &:focus {
     border: 2px solid $error;
   }
-
 }
 
 label.error {
@@ -333,7 +326,7 @@ label.error {
 
 // Mobile
 
-@media only screen and (max-width: 992px) { 
+@media only screen and (max-width: 992px) {
   #singup {
     padding: 0 24px 120px 24px;
 
@@ -345,22 +338,19 @@ label.error {
       text-align: center;
       margin-bottom: 56px;
     }
-
-  } 
-
+  }
 }
-
 
 @media only screen and (max-width: 767px) {
   #singup {
     padding-bottom: 70px;
 
-    .row-form{
-        margin-bottom: 0;
+    .row-form {
+      margin-bottom: 0;
     }
 
     .input-wrap {
-      margin-bottom: 32px; 
+      margin-bottom: 32px;
     }
 
     .input-wrap.last-input {
@@ -381,9 +371,9 @@ label.error {
       width: auto;
 
       .custom-select-arrow {
-        background: url("../assets/icons/caret-down.svg") 96% / 15% no-repeat #fff;
+        background: url("../assets/icons/caret-down.svg") 96% / 15% no-repeat#fff;
+        background-size: 16px;
       }
-
     }
 
     .custom-btn {
@@ -391,7 +381,6 @@ label.error {
     }
 
   }
-
+  
 }
-
 </style>

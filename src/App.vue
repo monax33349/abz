@@ -68,9 +68,9 @@ label.custom-file-label:focus {
   border: 2px solid $buttonDisabled;
 
   &:after {
-    height: 51px;
-    top: 0;
-    right: 0;
+    height: 55px;
+    top: -2px;
+    right: -2px;
     border-left-width: 2px;
     border-color: $buttonDisabled;
     line-height: 48px;
@@ -106,8 +106,8 @@ label.custom-file-label:focus {
   border: 2px solid $error;
 
   &:after {
-    height: 52px;
-    top: 0;
+    height: 55px;
+    top: -2px;
     right: 0;
     border-left-width: 2px;
     line-height: 48px;

@@ -1,6 +1,7 @@
 // Font Family
 @font-face {
-    font-family: 'Overpass';
+    font-family: 'Overpass', sans-serif;
+    font-display: auto;
     src: url('~@/assets/fonts/Overpass-SemiBold.ttf') format('ttf'),
         url('~@/assets/fonts/Overpass-SemiBold.eot') format('eot'),
         url('~@/assets/fonts/Overpass-SemiBold.svg') format('svg'),
@@ -10,7 +11,8 @@
 }
 
 @font-face {
-    font-family: 'Source Sans Pro';
+    font-family: 'SourceSansPro-Regular', sans-serif;
+    font-display: auto;
     src: url('~@/assets/fonts/SourceSansPro-Regular.ttf') format('ttf'),
         url('~@/assets/fonts/SourceSansPro-Regular.eot') format('eot'),
         url('~@/assets/fonts/SourceSansPro-Regular.svg') format('svg'),
@@ -20,7 +22,8 @@
 }
 
 @font-face {
-    font-family: 'Source Sans Pro';
+    font-family: 'SourceSansPro-Bold', sans-serif;
+    font-display: auto;
     src: url('~@/assets/fonts/SourceSansPro-Bold.ttf') format('ttf'),
         url('~@/assets/fonts/SourceSansPro-Bold.eot') format('eot'),
         url('~@/assets/fonts/SourceSansPro-Bold.svg') format('svg'),
@@ -37,12 +40,12 @@
 }
 
 @mixin fontSource {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'SourceSansPro-Regular', sans-serif;
     font-weight: 400;
 }
 
 @mixin fontSourceBold {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'SourceSansPro-Bold', sans-serif;
     font-weight: 700;
 }
 

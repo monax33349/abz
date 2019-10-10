@@ -1,7 +1,10 @@
 <template>
   <b-container id="users">
     <h2>Our cheerful users</h2>
-    <h5>Attention! Sorting users <br class="d-md-none"> by registration date</h5>
+    <h5>
+      Attention! Sorting users
+      <br class="d-md-none" />by registration date
+    </h5>
     <b-row class="users-wrapper">
       <b-col class="user" cols="12" sm="4" md="4" v-for="user of users" :key="user.id">
         <div class="user-photo">
@@ -13,7 +16,10 @@
             :content="user.name"
           >{{user.name}}</h4>
           <p>{{user.position}}</p>
-          <p v-tippy="{ placement: 'bottom', followCursor: 'initial', flip: true, distance: 10}" :content="user.email">{{user.email}}</p>
+          <p
+            v-tippy="{ placement: 'bottom', followCursor: 'initial', flip: true, distance: 10}"
+            :content="user.email"
+          >{{user.email}}</p>
           <p>{{user.phone}}</p>
         </div>
       </b-col>
@@ -126,7 +132,6 @@ export default {
           border-radius: 50%;
           object-fit: cover;
         }
-
       }
       .user-text {
         width: calc(100% - 70px);
@@ -134,29 +139,24 @@ export default {
 
         h4 {
           @include h4;
-          @include cropText;   
-    
+          @include cropText;
+
           &:focus {
             outline: none;
           }
-
         }
 
         p {
           @include p3;
           @include cropText;
-          cursor: pointer;   
-    
+          cursor: pointer;
+
           &:focus {
             outline: none;
           }
-
         }
-
       }
-
     }
-
   }
   button {
     @include fontSourceBold;
@@ -171,24 +171,21 @@ export default {
     background-color: #ffffff;
     margin-top: -32px;
 
-
     &:hover {
       background-color: rgba($buttonHover, 0.2);
     }
-    
+
     &:disabled {
       background-color: $buttonDisabled;
       color: $linkDisable;
       border: none;
     }
-
   }
-
 }
 
 // Mobile
 
-@media only screen and (max-width: 992px) { 
+@media only screen and (max-width: 992px) {
   #users {
     padding: 115px 15px 136px 15px;
 
@@ -210,17 +207,13 @@ export default {
         h4 {
           margin-bottom: 2px;
         }
-
       }
-
     }
-    
+
     button {
       margin-top: 60px;
     }
-
-  } 
-
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -251,12 +244,8 @@ export default {
         h4 {
           margin-bottom: 2px;
         }
-
       }
-
     }
-
   }
-  
 }
 </style>

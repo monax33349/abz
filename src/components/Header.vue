@@ -90,15 +90,15 @@
       </b-row>
     </b-container>
     <b-container class="banner" fluid>
-      <b-row>
-        <div class="banner-wrapper">
+      <b-container class="banner-wrapper">
+        <b-row>
           <b-col class="wrapper-left" cols="12" md="7" lg="6" xl="6">
             <h1>Test assignment for Frontend Developer position</h1>
             <p>We kindly remind you that your test assignment should be submitted as a link to github/bitbucket repository. Please be patient, we consider and respond to every application that meets minimum requirements. We look forward to your submission. Good luck!</p>
             <button v-scroll-to="'#singup'">Sign Up</button>
           </b-col>
-        </div>
-      </b-row>
+        </b-row>
+      </b-container>
     </b-container>
 
     <transition name="fade">
@@ -137,8 +137,9 @@ import ApiLanding from "@/api/landing";
 
 export default {
   name: "Header",
+
   created() {
-      ApiLanding.getUsersOne()
+    ApiLanding.getUsersOne()
       .then(response => (this.user = response.data.user))
       .catch(error => {
         /*eslint no-console: ["error", { allow: ["log"] }] */
@@ -164,7 +165,6 @@ export default {
     };
   }
 };
-
 </script>
 
 <style scoped lang="scss">
@@ -185,7 +185,6 @@ export default {
     height: 100%;
     margin: 0 auto;
   }
-
 }
 
 .logo {
@@ -196,7 +195,6 @@ export default {
   img {
     width: 130px;
   }
-
 }
 
 // Menu style
@@ -218,9 +216,7 @@ export default {
       color: $linkHover;
       cursor: pointer;
     }
-
   }
-
 }
 
 // Profile style
@@ -247,7 +243,6 @@ export default {
       overflow: hidden;
       text-overflow: ellipsis;
     }
-
   }
 
   .profile-photo {
@@ -272,9 +267,7 @@ export default {
       stroke: #2638bb;
       fill: #2638bb;
     }
-
   }
-
 }
 
 // Mobile menu
@@ -326,7 +319,6 @@ export default {
     z-index: 99999;
     overflow: auto;
   }
-
 }
 
 .mobile-menu-header {
@@ -346,7 +338,6 @@ export default {
     flex-direction: column;
     align-items: flex-start;
   }
-
 }
 
 .mobile-menu-footer {
@@ -420,9 +411,7 @@ export default {
     &:hover {
       background-color: $buttonHover;
     }
-
   }
-
 }
 
 // Mobile profile style
@@ -441,9 +430,7 @@ export default {
       width: 67px;
       height: 67px;
     }
-
   }
-
 }
 
 // Mobile style
@@ -460,31 +447,29 @@ export default {
   }
 
   .mobile-menu-control .menu-control {
-      margin-right: 18px;
+    margin-right: 18px;
   }
 
   .banner {
     background-image: url("../assets/imgs/banner-bg/banner-bg-768x622.jpg");
 
-      .wrapper-left {
-        padding: 115px 15px 121px;
+    .wrapper-left {
+      padding: 115px 15px 121px;
 
-        h1 {
-          @include h2;
-          margin-bottom: 21px;
-        }
-
-        p {
-          @include p2;
-        }
-
-        button {
-          margin-top: 68px;
-        }
-
+      h1 {
+        @include h2;
+        margin-bottom: 21px;
       }
-  }
 
+      p {
+        @include p2;
+      }
+
+      button {
+        margin-top: 68px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -512,10 +497,7 @@ export default {
       .wrapper-left {
         padding: 70px 15px;
       }
-
     }
-
   }
-
 }
 </style>
