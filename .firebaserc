@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "abz-project-3a0c9"
+    "default": "abz-project-3a0c9",
+    "abz-project-3a0c9": "abz-project-3a0c9"
   }
 }

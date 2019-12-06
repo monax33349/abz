@@ -368,6 +368,7 @@ export default {
   background-image: url("../assets/imgs/banner-bg/banner-bg-2560x676.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 
   .banner-wrapper {
     @include maxW;
@@ -492,6 +493,7 @@ export default {
 
       button {
         margin: 20px auto 0 auto;
+        width: 260px;
       }
 
       .wrapper-left {

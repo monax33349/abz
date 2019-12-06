@@ -277,6 +277,7 @@ export default {
             @include maxW;
             min-height: 83px;
             align-items: center;
+            width: 100%;
 
             .footer-nav li a {
                 color: #fff;
